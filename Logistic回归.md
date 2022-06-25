@@ -25,6 +25,7 @@ from sklearn.metrics import confusion_matrix
 cm=confusion_matrix(y_test,y_pred)
 # 画图
 from matplotlib.colors import ListedColormap
+## 改变train为test就可以看测试数据的分类
 X_set,y_set=X_train,y_train
 ## meshgrid函数让2组数据中的值互相匹配。给表格周边留白，此处留白数字1
 X1,X2=np.meshgrid(np.arange(start=X_set[:,0].min()-1,stop=X_set[:,0].max()+1,step=0.01),
