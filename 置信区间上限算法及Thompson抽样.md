@@ -8,7 +8,23 @@ import matplotlib.pyplot as plt
 dataset=pd.read_csv('Ads_CTR_Optimisation.csv')
 dataset
 ```
-## 方法一：运行置信区间上界算法
+## 方法一：随机数来验证，作为上面方法的对比
+```
+import random
+record=[]
+total=0
+for n in range(10000):
+    k=random.randrange(0,10)
+    record.append(k)
+    total=total+dataset.iloc[n,k]
+### 绘图
+plt.hist(record)
+plt.title(f"hitshot number is {total}")
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/41554601/176184088-931663cd-d54d-48cc-80a5-1cb487466163.png)
+
+## 方法二：运行置信区间上界算法
 ![image](https://user-images.githubusercontent.com/41554601/176180687-64547b6f-7c8f-4eee-968d-a1987682635f.png)
 ## 先把每个机器运行一遍，然后算每个机器的置信区间的上限，选最高的上限的那个机器继续运行
 ```
@@ -45,22 +61,6 @@ plt.ylabel('Number of times each ad was selected')
 plt.show()
 ```
 ![image](https://user-images.githubusercontent.com/41554601/176180732-bce3309a-6659-4d82-b497-a532c2e7fd26.png)
-
-## 方法二：随机数来验证，作为上面方法的对比
-```
-import random
-record=[]
-total=0
-for n in range(10000):
-    k=random.randrange(0,10)
-    record.append(k)
-    total=total+dataset.iloc[n,k]
-### 绘图
-plt.hist(record)
-plt.title(f"hitshot number is {total}")
-plt.show()
-```
-![image](https://user-images.githubusercontent.com/41554601/176184088-931663cd-d54d-48cc-80a5-1cb487466163.png)
 
 ## 方法三：Thompson抽样算法
 ### 每次用概率最高的广告去进行下游实验
