@@ -11,8 +11,10 @@ wcss=[]
 for i in range(1,11):
     ## n_init: 获取初始簇中心的更迭次数，为了弥补初始质心的影响，算法默认会初始10次质心，实现算法，然后返回最好的结果。
     ## max_iter: 最大迭代次数（因为kmeans算法的实现需要迭代）
+    ## init='k-means++',n_init=10 可以不掉入初始值陷阱
     kmeans=KMeans(n_clusters=i,init='k-means++',n_init=10,max_iter=300,random_state=0)
     kmeans.fit(X)
+    ## inertia表示组间距离之和
     wcss.append(kmeans.inertia_)
 plt.plot(range(1,11),wcss)
 plt.show()
