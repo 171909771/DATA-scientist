@@ -8,6 +8,7 @@
 ![image](https://user-images.githubusercontent.com/41554601/177705078-fb0074e9-59a3-4401-a610-838515cea37b.png)
 
 ## 随机森林
+![image](https://user-images.githubusercontent.com/41554601/177705171-ac2f19a5-4951-4852-8e44-dec442eb4346.png)
 
 ## 朴素贝叶斯
 <img src="https://user-images.githubusercontent.com/41554601/177697710-65845dd9-c725-49ea-b634-dbd2cc59f501.png" width="375">
