@@ -5,4 +5,5 @@
 ### 举例说明：以下面红绿点为例来解释。先算出红点和绿点的分布概率，再来计算灰点属于红点还是绿点
 
 <img src="https://user-images.githubusercontent.com/41554601/177697989-1e017560-c4a3-453d-85bc-64c201ed67d0.png" width="375">
-
+### 线性图像
+![image](https://user-images.githubusercontent.com/41554601/177704399-befe9f92-d59b-47c5-862b-07bb076b0ed5.png)
