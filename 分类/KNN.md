@@ -1,3 +1,6 @@
+### 载入数据
+[fruit_data_with_colors.txt](https://github.com/171909771/DATA-scientist/files/9173566/fruit_data_with_colors.txt)
+
 ```
 import numpy as np
 import pandas as pd
