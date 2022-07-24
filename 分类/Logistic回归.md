@@ -17,7 +17,8 @@ X_train=sc_X.fit_transform(X_train)
 X_test=sc_X.transform(X_test)
 # logistic 回归
 from sklearn.linear_model import LogisticRegression
-classifier=LogisticRegression(random_state=0)
+## 下面C参数越小代表更强的正则化
+classifier=LogisticRegression(C=1，random_state=0)
 classifier.fit(X_train,y_train)
 y_pred=classifier.predict(X_test)
 # 混淆矩阵
