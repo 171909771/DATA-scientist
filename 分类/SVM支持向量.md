@@ -22,7 +22,7 @@ from sklearn.svm import SVC
 ### rbf就是高悬函数
 ### sigmoid就是logistic回归
 ### C是正则化，越大效果越小
-classifier=SVC(kernel='poly',degree=3.5, C=1，random_state=0)
+classifier=SVC(kernel='poly',degree=3.5, C=1, random_state=0)
 classifier.fit(X_train,y_train)
 y_pred=classifier.predict(X_test)
 # 混淆矩阵
