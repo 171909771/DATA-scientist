@@ -21,7 +21,8 @@ from sklearn.svm import SVC
 ### poly就是多项式回归，可以调degree
 ### rbf就是高悬函数
 ### sigmoid就是logistic回归
-### C是正则化，越大效果越小
+### rbf:C是正则化，越大效果越小,越大越锐利
+### rbf:gamma越大越锐利（只有靠近的点被认为相似）
 classifier=SVC(kernel='poly',degree=3.5, C=1, random_state=0)
 classifier.fit(X_train,y_train)
 y_pred=classifier.predict(X_test)
