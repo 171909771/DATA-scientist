@@ -16,3 +16,25 @@ dummy_m.score(X_test, y_test)
 from sklearn.metrics import confusion_matrix
 confusion_matrix(dummy_m.predict(X_test),y_test)
 ```
+### 混淆矩阵基本评估
+![image](https://user-images.githubusercontent.com/41554601/180994030-905c4795-0928-442a-a789-88f098a90e07.png)
+![image](https://user-images.githubusercontent.com/41554601/180994499-156daa90-6448-4119-a650-17cbaaee62f7.png)
+```
+from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(x, y_imbalance, random_state=0)
+svm=SVC(kernel='linear',C=1).fit(X_train, y_train)
+svm.score(X_test, y_test)
+### 混淆矩阵
+from sklearn.metrics import confusion_matrix
+confusion_matrix(svm.predict(X_test),y_test)
+### 评估accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+print(accuracy_score(svm.predict(X_test),y_test))
+print(precision_score(svm.predict(X_test),y_test))
+print(recall_score(svm.predict(X_test),y_test))
+print(f1_score(svm.predict(X_test),y_test))
+### 综合评估
+from sklearn.metrics import classification_report
+print(classification_report(svm.predict(X_test),y_test))
+```
