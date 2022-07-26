@@ -1,4 +1,4 @@
-### 按照训练集中的结果分层进行构建
+### 假验证，按照训练集中的结果分层进行构建
 ```
 from sklearn.datasets import load_digits
 dataset=load_digits()
