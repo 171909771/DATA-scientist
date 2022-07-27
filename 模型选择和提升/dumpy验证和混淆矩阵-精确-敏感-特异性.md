@@ -44,6 +44,7 @@ from sklearn.metrics import classification_report
 print(classification_report(svm.predict(X_test),y_test))
 ```
 ### 连续因变量的dummy比较，用r2
+![image](https://user-images.githubusercontent.com/41554601/181385182-92012fee-0a53-42d2-9ec1-73a98bde1560.png)
 ```
 from sklearn.linear_model import LinearRegression
 from sklearn.dummy import DummyRegressor
