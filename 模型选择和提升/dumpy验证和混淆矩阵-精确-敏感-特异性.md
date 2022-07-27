@@ -43,3 +43,13 @@ sns.heatmap(precm1,annot=True)
 from sklearn.metrics import classification_report
 print(classification_report(svm.predict(X_test),y_test))
 ```
+### 连续因变量的dummy比较，用r2
+```
+from sklearn.linear_model import LinearRegression
+from sklearn.dummy import DummyRegressor
+ln1=LinearRegression().fit(X_train, y_train)
+ln2=DummyRegressor(strategy='mean').fit(X_train, y_train)
+from sklearn import metrics
+metrics.r2_score(y_train,ln1.predict(X_train))
+metrics.r2_score(y_train,ln2.predict(X_train))
+```
