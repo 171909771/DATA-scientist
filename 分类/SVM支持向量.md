@@ -47,7 +47,7 @@ for i, j in enumerate(np.unique(y_set)):
 ```
 ![image](https://user-images.githubusercontent.com/41554601/175771586-14e9902f-7963-4cda-bbb5-c35b1c25247a.png)
 
-### Precision-Recall及ROC曲线
+### Precision-Recall曲线
 ```
 decision_scores=decision_scores=svm.decision_function(X_test)  ###SVM所独有
 from sklearn.metrics import precision_score
@@ -68,3 +68,11 @@ plt.plot(precisions, recalls) #绘制Precision-Recall曲线
 ![image](https://user-images.githubusercontent.com/41554601/181265375-68e8277c-2fab-4dc5-be15-e0400ead290e.png)
 ![image](https://user-images.githubusercontent.com/41554601/181265390-09e7c236-c642-4143-81c1-94f6003eef95.png)
 
+### ROC曲线
+```
+from sklearn.metrics import roc_curve
+fpr, tpr, thresholds = roc_curve(y_test, decision_scores, pos_label=1)
+plt.plot(fpr,tpr,marker = 'o')
+plt.show()
+```
+![image](https://user-images.githubusercontent.com/41554601/181271295-6ae986d1-d5fd-4dba-a29c-63c948cacf1e.png)
