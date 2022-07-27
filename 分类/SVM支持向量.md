@@ -46,3 +46,25 @@ for i, j in enumerate(np.unique(y_set)):
                color=ListedColormap(('orange','blue'))(i),label=i)
 ```
 ![image](https://user-images.githubusercontent.com/41554601/175771586-14e9902f-7963-4cda-bbb5-c35b1c25247a.png)
+
+### Precision-Recall及ROC曲线
+```
+decision_scores=decision_scores=svm.decision_function(X_test)  ###SVM所独有
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+precisions = [] #记录精准率
+recalls = [] #记录召回率
+thresholds = np.arange(np.min(decision_scores), np.max(decision_scores), 0.1) #分割不同的threshold
+for threshold in thresholds:
+    y_predict = np.array(decision_scores >= threshold, dtype='int')
+    precisions.append(precision_score(y_test, y_predict))
+    recalls.append(recall_score(y_test, y_predict))
+import matplotlib.pyplot as plt
+plt.plot(thresholds, precisions) #绘制thresholds—精确率曲线
+plt.plot(thresholds, recalls) #绘制thresholds—召回率曲线
+plt.show()
+plt.plot(precisions, recalls) #绘制Precision-Recall曲线
+```
+![image](https://user-images.githubusercontent.com/41554601/181265375-68e8277c-2fab-4dc5-be15-e0400ead290e.png)
+![image](https://user-images.githubusercontent.com/41554601/181265390-09e7c236-c642-4143-81c1-94f6003eef95.png)
+
