@@ -34,6 +34,11 @@ print(accuracy_score(svm.predict(X_test),y_test))
 print(precision_score(svm.predict(X_test),y_test))
 print(recall_score(svm.predict(X_test),y_test))
 print(f1_score(svm.predict(X_test),y_test))
+##### 高阶画图
+precm=confusion_matrix(y_test,svm.predict(X_test))
+import seaborn as sns
+precm1=pd.DataFrame(precm)
+sns.heatmap(precm1,annot=True)
 ### 综合评估
 from sklearn.metrics import classification_report
 print(classification_report(svm.predict(X_test),y_test))
