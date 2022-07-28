@@ -1,3 +1,5 @@
+### 树模型可以不用normalization
+
 ## Logistic回归
 ![image](https://user-images.githubusercontent.com/41554601/177704707-0ef9f214-a43c-456b-8865-3aaf4a19442c.png)
 
