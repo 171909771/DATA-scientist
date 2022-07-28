@@ -27,7 +27,7 @@ accuracies.mean()
 train,test=cross_val_score(estimator=classifier,X=X_train,y=y_train,cv=10)
 ```
 #### 验证曲线
-###### 查看在交叉验证中不同参数的作用
+###### 查看在交叉验证中不同参数的作用，注意只能验证一个参数，grid可以验证多个
 ```
 from sklearn.model_selection import validation_curve
 range1=np.arange(1,11,1)
@@ -47,6 +47,9 @@ plt.plot(range1, y2mean, linewidth=2)
 ![image](https://user-images.githubusercontent.com/41554601/180798696-b91e5314-eac9-4a16-bc9d-676b6e1b739e.png)
 
 ### grid search (相当于验证不同的参数)
+##### scoring值
+![image](https://user-images.githubusercontent.com/41554601/181431232-b133b283-ff9e-4a3c-88f8-e80fd6c0b5d2.png)
+
 ```
 from sklearn.model_selection import GridSearchCV
 ## C 代表是否过度拟合（是SVM的参数），最小可能过度拟合，最大可能拟合不足
