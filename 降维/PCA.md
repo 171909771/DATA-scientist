@@ -17,7 +17,7 @@ X_test=sc_X.transform(X_test)
 
 # step2 PCA
 from sklearn.decomposition import PCA
-##### n_components先设置为None（就等于自变量数目），PCA 查看每个成分的P值 #####
+##### n_components先设置为None（就等于自变量数目），explained_variance_ratio_: 它代表降维后的各主成分的方差值占总方差值的比例，这个比例越大，则越是重要的主成分 #####
 pca=PCA(n_components=None)
 X_train=pca.fit_transform(X_train)
 X_test=pca.transform(X_test)
