@@ -13,9 +13,19 @@ sc_X = StandardScaler()
 X_train=sc_X.fit_transform(X_train)
 X_test=sc_X.transform(X_test)
 ```
-### Hierarchical
+### sklearn中的分层聚类
 ```
-from scipy.cluster.hierarchy import ward,dendrogram
+from sklearn.cluster import AgglomerativeClustering
+Agg=AgglomerativeClustering(n_clusters=3)
+pred1=Agg.fit_predict(X_train)
+pred2=pred1+1
+### 混淆矩阵
+from sklearn.metrics import confusion_matrix
+cm=confusion_matrix(y_train,pred2)
+```
+### scipy中的分层聚类
+```
+from scipy中的分层聚类.cluster.hierarchy import ward,dendrogram
 plt.figure()
 dendrogram(ward(X_train))
 plt.show()
