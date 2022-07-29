@@ -16,6 +16,7 @@ X_test=sc_X.transform(X_test)
 ### sklearn中的分层聚类
 ```
 from sklearn.cluster import AgglomerativeClustering
+### 分几类
 Agg=AgglomerativeClustering(n_clusters=3)
 pred1=Agg.fit_predict(X_train)
 pred2=pred1+1
